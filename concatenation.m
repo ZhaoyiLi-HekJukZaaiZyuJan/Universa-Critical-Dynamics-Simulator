@@ -1,6 +1,5 @@
-%Created by Joaquin, Modified by Zhaoyi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Main.m %
+% Concatenation.m %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%,
 
 %%concatenate all simulated data
