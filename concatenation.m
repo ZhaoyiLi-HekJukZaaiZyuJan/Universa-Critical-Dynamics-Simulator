@@ -1,3 +1,7 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Concatenation.m %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%,
+
 %%concatenate all simulated data
 <<<<<<< HEAD
 name = "random_24-Apr-2022_L=100_Jz=0.5_S=10_psi0=0.70711_stag=1_q0=0.31416";
