@@ -3,9 +3,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%,
 
 %%concatenate all simulated data
+<<<<<<< HEAD
+name = "random_24-Apr-2022_L=100_Jz=0.5_S=10_psi0=0.70711_stag=1_q0=0.31416";
+
+load(strcat("/scratch/users/ladmon/AFM//results/",name,"_i=1.mat"));
+=======
 name = "21-Apr-2022_L=100_Jz=0.5_S=10_psi0=0.70711_q0=0.62832";
 
 load(strcat("./results/",name,"_i=1.mat"));
+>>>>>>> origin/master
 RPT = size(T,2);
 
 Csum_t = cell(1,3);
@@ -15,7 +21,11 @@ a=0;
 for i = [1:100]
     disp('.')
     try
+<<<<<<< HEAD
+        load(strcat("/scratch/users/ladmon/AFM/results/", name, "_i=",num2str(i),".mat"))
+=======
         load(strcat("./results/", name, "_i=",num2str(i),".mat"))
+>>>>>>> origin/master
         for direc = [1 2 3]
             Csum_t{direc}(:,:,:) = Csum_t{direc}(:,:,:) + C_t{direc}(:,:,:);%2D correlation function
         end
@@ -24,6 +34,11 @@ for i = [1:100]
 
 end
 
+<<<<<<< HEAD
+filename = strcat('/scratch/users/ladmon/AFM/results/',name, '_concat.mat');
+save(filename,'Csum_t','L','J_z','S','psi_0','q','q0','Nq','stag','N_samples','kr_range','T','tau');
+%save(filename,'Csum_t','L','J_z','S','psi_0','q','N_samples','kr_range','T','tau');
+=======
 filename = strcat('./results/',name, '_concat.mat');
 save(filename,'Csum_t','L','J_z','S','psi_0','q','N_samples','kr_range','T','tau');
 
@@ -73,3 +88,4 @@ fname = "random_24-Apr-2022_L=100_Jz=0.5_S=10_psi0=0.70711_stag=1_q0=0.31416";
 %fname = "random_24-Apr-2022_L=100_Jz=0.5_S=10_psi0=0.70711_stag=1_q0=0.31416",
 load(strcat("./results/", fname,"_concat.mat"))
 % surf(Csum_t{1}(:,:,1))
+>>>>>>> origin/master
