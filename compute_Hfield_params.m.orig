@@ -1,4 +1,4 @@
-function [Hx,Hy,Hz] = compute_Hfield(psi_x,psi_y,psi_z,J_z)
+function [Hx,Hy,Hz] = compute_Hfield_params(psi_x,psi_y,psi_z,J_z)
 
     L = size(psi_x,1);
     Hx = zeros(L,L);

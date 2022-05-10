@@ -1,14 +1,15 @@
-function Cii = compute_C_direct(psi_i,kr_range,nsigma,stag)
+function C = compute_C_unequ(psi_i_t0, psi_i,kr_range,nsigma,stag)
 L = size(psi_i,1);
 
 %Compute FT:
 FT = fft2(psi_i)/L;
+FT_t0 = fft2(psi_i_t0)/L;
 
 
 %Average over wavevectors:
 k_range = -pi+2*pi/L:2*pi/L:pi;
 sigma = nsigma*2*pi/L;
-Cii = zeros(L,1);
+C = zeros(L,1);
 
 %1:
 
@@ -31,14 +32,13 @@ for r = 1 : L
                 weight = exp(-(sqrt(ki^2+kj^2)-abs(kr))^2/sigma^2);
             end
             if stag == 1
-                weight = exp(-(sqrt((abs(ki)-pi)^2 + (abs(kj)-pi)^2 ) - abs(abs(kr)-pi) )^2/sigma^2);
+                weight = exp(-(sqrt((abs(ki)-pi)^2+(abs(kj)-pi)^2)-abs(abs(kr)-pi))^2/sigma^2);
             end
-            
-            Cii(r) = Cii(r) + abs(FT(i,j))^2*weight;
+            C(r) = C(r) + real(FT(i,j)*conj(FT_t0(i,j)))*weight;
             norm = norm + weight;
         end
     end
-    Cii(r) = Cii(r)/norm;
+    C(r) = C(r)/norm;
     
 end
 
