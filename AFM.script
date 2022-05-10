@@ -1,0 +1,14 @@
+#!/bin/sh              
+#SBATCH --ntasks=1       
+#SBATCH --mail-type=END,FAIL    # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=ladmon@stanford.edu
+#SBATCH --array=1-100         # Array range
+#SBATCH --job-name=antiferromagnet
+#SBATCH --output=/scratch/users/ladmon/AFM/output/AFM_%A_%a.out
+#SBATCH --error=/scratch/users/ladmon/AFM/output/AFM_%A_%a.err
+#SBATCH --partition=normal
+#SBATCH --time=24:00:00
+#SBATCH --cpus-per-task=1
+
+module load matlab
+matlab -nodisplay -r "main_r($SLURM_ARRAY_TASK_ID)"
