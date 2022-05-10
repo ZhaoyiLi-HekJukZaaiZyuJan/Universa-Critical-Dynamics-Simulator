@@ -1,3 +1,8 @@
+%Created by Joaquin, Modified by Zhaoyi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main.m %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%,
+
 %%concatenate all simulated data
 name = "21-Apr-2022_L=100_Jz=0.5_S=10_psi0=0.70711_q0=0.62832";
 
