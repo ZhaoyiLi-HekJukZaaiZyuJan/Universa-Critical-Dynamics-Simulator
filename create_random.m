@@ -2,7 +2,7 @@
 %S_x^2+S_y^2>1, then I allow the S_z component to be zeros using the function
 %f(x)=x if x<1, and f(x)=2-x if 1<x<2, and f(x) = 0 if x>2.
 
-function [psi_x,psi_y,psi_z] = create_spiralgaussian(L,qx,qy,t,S,seed,stag)
+function [psi_x,psi_y,psi_z] = create_spiralgaussian(L,t,S,seed,stag)
 
 	psi_x = zeros(L,L);
 	psi_y = zeros(L,L);

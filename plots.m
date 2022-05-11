@@ -41,9 +41,9 @@ else
 end
 
 %% 2D plot of the distribution of Ct(k,t): whole plane
-% load("results/19-Apr-2022_L_100_Jz_0.5_S_10_psi0_0.70711_q0_0.62832.mat")
+load("concat/10-May-2022_L_400_Jz_0.5_S_10_psi0_0.70711_q0_0.31416_concat.mat")
 
-surf(C_t{2}(:,:,3))
+surf(Csum_t{3}(:,:,3))
 
 %%
 %Plots the distribution of Ct(k,t): whole plane
