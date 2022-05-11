@@ -11,4 +11,4 @@
 #SBATCH --cpus-per-task=1
 
 module load matlab
-matlab -nodisplay -r "main_r($SLURM_ARRAY_TASK_ID)"
+matlab -nodisplay -r "main($SLURM_ARRAY_TASK_ID)"

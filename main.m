@@ -1,4 +1,5 @@
 %Created by Joaquin, Modified by Zhaoyi
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Local version %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%,
@@ -6,9 +7,9 @@
 %% Part 1. Simulation:
 function main(seed)
 %%
-seed = 1
+%seed = 1
 %input parameters:
-L = 100;
+L = 400;
 kr_range = 2*pi/L:2*pi/L:pi;
 S = 10;
 theta = pi/4;
@@ -32,7 +33,7 @@ random = 1;
 tau = 1/(psi_0^2*(2-cos(q(1))-cos(q(2))));%defines timescale of the spiral state
 % Stepsize：
 % T = [tau*ones(1,20),tau/15*ones(1,150)];
-T = [tau*ones(1,3)];%Stepsize
+T = [tau*ones(1,100)];%Stepsize
 % T = [tau*ones(1,60)];%Stepsize
 RPT = size(T,2);
 N_steps = 100;%Roughly speaking, you want to do ~1000-2000steps/tau
@@ -104,10 +105,11 @@ end
 c=date;
 % filename = strcat('/scratch/users/ladmon/AFM/results/',c, '_L_',num2str(L), '_Jz_', num2str(J_z), ...
 %          '_S_',num2str(S),'_psi0_', num2str(psi_0), '_q_', num2str(q),'.mat');
-filename = strcat('./results/',c, '_L_',num2str(L), '_Jz_', num2str(J_z), ...
-         '_S_',num2str(S),'_psi0_', num2str(psi_0), '_q0_', num2str(q0),'.mat');
-save(filename,'psi_t','C_t','Energy','Magnetization','L','J_z','S','psi_0','q','N_samples','kr_range','T','tau');
+filename = strcat('/scratch/users/ladmon/AFM/results/',c, '_L_',num2str(L), '_Jz_', num2str(J_z), ...
+         '_S_',num2str(S),'_psi0_', num2str(psi_0), '_q0_', num2str(q0),'_i=',num2str(seed),'.mat');
 
+save(filename,'psi_t','C_t','Energy','Magnetization','L','J_z','S','psi_0','q','q0','Nq','N_samples','kr_range','stag','T','tau');
+disp("saved")
 %%
 
 surf(C_t{3}(:,:,1))
